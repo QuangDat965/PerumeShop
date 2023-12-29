@@ -1,11 +1,25 @@
-// app.js
 const express = require('express');
 const app = express();
-const userRoutes = require('./routes/userRoutes');
+const sequelize = require('./config/databasemssql');
+const userController = require('./application/controllers/userController');
+const bodyParser = require('body-parser');
 
-app.use('/api', userRoutes);
+app.use(bodyParser.json());
+//#region Đăng kí controller
+app.use('/api', userController);
+//#endregion
 
-const PORT = process.env.PORT || 3000;
+//#region  Kiểm tra kết nối
+sequelize.authenticate()
+  .then(() => {
+    console.log('Connected to the database by squelize');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
+//#endregion
+
+const PORT = process.env.PORT || 3003;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
