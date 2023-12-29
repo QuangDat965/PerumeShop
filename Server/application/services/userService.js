@@ -1,4 +1,3 @@
-const db = require('../../config/databasemssql')
 const Users = require('../models/user');
 
 const UserService = {
