@@ -1,5 +1,7 @@
 # PerumeShop
 ## how to run
+###
+ - import data to sql server from file ./perfumesql
 ### run server
  - cd Server
  - npm install
