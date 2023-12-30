@@ -1,0 +1,9 @@
+
+.App {
+  width: 100%;
+  margin: 0;
+  padding: 20px; /* Đây chỉ là ví dụ, padding có thể được điều chỉnh theo ý muốn */
+  box-sizing: border-box; 
+  background: linear-gradient(344deg, rgb(109, 192, 234) 0.00%, rgb(243, 212, 224) 59.78%);
+  height: 100%;
+}
