@@ -2,11 +2,15 @@ const express = require('express');
 const app = express();
 const sequelize = require('./config/databasemssql');
 const userController = require('./application/controllers/userController');
+const roleController = require('./application/controllers/roleController');
+
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
 //#region Đăng kí controller
 app.use('/api', userController);
+app.use('/api', roleController);
+
 //#endregion
 
 //#region  Kiểm tra kết nối
