@@ -7,3 +7,10 @@
   background: linear-gradient(344deg, rgb(109, 192, 234) 0.00%, rgb(243, 212, 224) 59.78%);
   height: 100%;
 }
+
+.hiden {
+  display: none;
+}
+.r-linec {
+  text-decoration: none;
+}

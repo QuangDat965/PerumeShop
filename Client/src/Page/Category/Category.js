@@ -51,6 +51,24 @@ export const Category = () => {
     vote: 0,
     price: 1000
 
+  }
+  ,
+  {
+    imgSrc: 'https://golmart.com.vn/wp-content/uploads/2020/02/nuoc-hoa-13-2048x1492.jpg',
+    title: 'Nước hoa xịn',
+    desc: 'hàng tàu',
+    vote: 0,
+    price: 1000
+
+  }
+  ,
+  {
+    imgSrc: 'https://golmart.com.vn/wp-content/uploads/2020/02/nuoc-hoa-13-2048x1492.jpg',
+    title: 'Nước hoa xịn',
+    desc: 'hàng tàu',
+    vote: 0,
+    price: 1000
+
   }];
   return (
     <div className='categoryc'>
