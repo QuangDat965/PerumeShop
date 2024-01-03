@@ -1,26 +1,12 @@
-const sql = require('mssql');
-const config = {
-    server: 'localhost',
-    database: 'perfum',
-    user: 'sa',
-    password: '16122001',
-    trustServerCertificate:true,
-    options: {
-        cryptoCredentialsDetails: {
-            minVersion: 'TLSv1',
-            trustServerCertificate: true,
-        }
-    }   
-  };
-  
+require('dotenv').config();
 
-// connect to your database
-sql.connect(config, function (err) {
+// Sử dụng các biến môi trường đã được load
+const dbname = process.env.DN_NAME;
+const dbhost = process.env.DB_HOST;
+const dbuser = process.env.DB_USER;
+const dbpassword = process.env.DB_PASSWOED; // Chú ý đã sửa chính tả ở đây
 
-    if (err) console.log(err);
-    else {
-        console.log('Connected to SQL Server');
-    }
-
-});  
-    
+console.log(dbname);
+console.log(dbhost);
+console.log(dbuser);
+console.log(dbpassword);
