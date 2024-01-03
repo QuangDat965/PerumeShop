@@ -3,4 +3,30 @@
         background: linear-gradient(132deg, rgb(113, 143, 175) 0.00%, rgb(173, 206, 236) 100.00%) !important
 
     }
+    .textc {
+        text-decoration: none;
+        color: black;
+        margin-left: 5px;
+    }
+    .togglech:hover > ul{
+        display: block !important;
+    }
+    .togglec{
+        display: none;
+    }
+    
+    .textc:hover {
+       color: azure;
+    }
+    .nav-cus {
+        display: flex !important;
+    }
+    .title {
+        font-family: 'Lobster',cursive, ; /* Sử dụng font Pacifico hoặc font có chữ uốn lượn mà bạn thích */
+        font-size: 48px;
+        text-align: center;
+        display: inline;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
