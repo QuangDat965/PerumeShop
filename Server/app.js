@@ -3,13 +3,18 @@ const app = express();
 const sequelize = require('./config/databasemssql');
 const userController = require('./application/controllers/userController');
 const roleController = require('./application/controllers/roleController');
+const productController = require('./application/controllers/productController');
+
 
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
 //#region Đăng kí controller
-app.use('/api', userController);
-app.use('/api', roleController);
+app.use('/api/user', userController);
+app.use('/api/role', roleController);
+app.use('/api/product', productController);
+
+
 
 //#endregion
 
