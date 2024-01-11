@@ -11,14 +11,15 @@ const Products = sequelize.define('Products', {
   Name: DataTypes.TEXT,
   Description: DataTypes.TEXT,
   Original: DataTypes.TEXT,
-  OriginPrice: DataTypes.DECIMAL(18,2),
-  Price: DataTypes.DECIMAL(18,2),
+  OriginPrice: DataTypes.NUMBER(18,2),
+  Price: DataTypes.NUMBER(18,2),
   Amount: DataTypes.INTEGER,
   IdSize: DataTypes.INTEGER,
   IdCatg: DataTypes.INTEGER,
   Sex: DataTypes.TEXT,
   Total: DataTypes.INTEGER,
   Rates: DataTypes.INTEGER,
+  ImageSr: DataTypes.TEXT,
 }, {
   tableName:'Products',
   timestamps: false 

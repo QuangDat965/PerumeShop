@@ -14,7 +14,7 @@ const Users = sequelize.define('User', {
   Username :String,
   Password :String,
   NumberPhone :String,
-  Adress :String,
+  Address :String,
   Image :String,
   ShopId :Number,
   RoleId :Number,

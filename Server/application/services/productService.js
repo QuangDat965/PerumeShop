@@ -25,8 +25,8 @@ const ProductService = {
 
   async AddProduct(req, res) {
     try {
-      const users = await Users.create({...req.body});
-      res.json(users);
+      const products = await Products.create(req.body);
+      res.json(products);
     } catch (error) {
       res.status(500).json({ message: error.message});
     }

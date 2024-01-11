@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import './login.scss'
 import { get, post } from '../../Api/Api';
 import { useHistory } from 'react-router-dom';
+import { Alert } from 'bootstrap';
 
 function Login(props) {
-  const [Username,setUserName] = useState('');
+  const [Username,setUserName] = useState(''); 
   const [Password,setPassword] = useState('');
   const history = useHistory();
   const handleLogin = async (e) => {
@@ -20,6 +21,10 @@ function Login(props) {
       localStorage.setItem('islogin','true');
       history.push('/');
     }
+    else if(login.code==-1) {
+      alert('Đăng nhập thất bại')
+    }
+
   };
 
   return (

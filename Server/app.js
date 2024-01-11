@@ -13,9 +13,10 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(cors());
 //#region Đăng kí controller
-app.use('/api/user', userController);
-app.use('/api/role', roleController);
-app.use('/api/product', productController);
+//REST FULL API
+app.use('/api', userController);
+app.use('/api', roleController);
+app.use('/api', productController);
 app.use('/api', categoryController);
 app.use('/api', authController);
 

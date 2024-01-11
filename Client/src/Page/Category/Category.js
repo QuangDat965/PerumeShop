@@ -1,8 +1,30 @@
 import React, { useEffect, useState } from 'react'
 import './Category.scss'
 import { Product } from './Product'
+import { get } from '../../Api/Api'
 
 export const Category = () => {
+  const [productss,setProduct] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await get('products');
+        console.log("result");
+        console.log(result);
+        result.map(e=> {
+          console.log(e);
+        })
+        setProduct(result);
+      } catch (error) {
+        // Xử lý lỗi ở đây
+      }
+    };
+
+    fetchData(); // Gọi hàm async trong useEffect
+  }, []);
+  const data =  get('products');
+  console.log(data);
+
 
   const products = [{
     imgSrc: 'https://golmart.com.vn/wp-content/uploads/2020/02/nuoc-hoa-13-2048x1492.jpg',
@@ -161,7 +183,7 @@ export const Category = () => {
         </div>
 
 
-        <Product products={products}></Product>
+        <Product products={productss}></Product>
       </section>
 
 

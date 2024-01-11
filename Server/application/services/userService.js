@@ -57,8 +57,6 @@ const UserService = {
       res.status(500).json({ message: error.message});
     }
   },
-
-  
 };
 
 module.exports = UserService;

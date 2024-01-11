@@ -1,17 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot} from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom'; // Import BrowserRouter
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
+const root = document.getElementById('root');
+const rootElement = createRoot(root);
+rootElement.render(
+ 
     <BrowserRouter> {/* Sử dụng BrowserRouter ở đây */}
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
+  
 );
 
 reportWebVitals();
