@@ -1,0 +1,25 @@
+.star-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.star-rating .star {
+    font-size: 14px;
+    color: #c7c0ae; /* Màu sao bình thường */
+    //margin-right: 2px; /* Khoảng cách giữa sao và số đánh giá */
+
+  }
+  
+  .star-rating .star.highlight {
+    color: #efd318; /* Màu sao phát sáng */
+    transition: color 0.5s; /* Thời gian chuyển đổi màu sáng */
+  }
+
+  .star-rating .rating-number {
+    margin-left: 4px;
+    color: #3b598b; /* Màu cho số đánh giá */
+  }
+
+  .product-price {
+    font-size: 18px; /* Kích thước chữ mong muốn cho giá */
+  }

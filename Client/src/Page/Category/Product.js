@@ -1,9 +1,40 @@
-import React from "react";
+//import React from "react";
+import React, { useEffect, useState } from 'react'
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import './Product.scss'
 
+//Component tạo sao
+const Star = ({ isHighlighted }) => (
+  <i className={`fa fa-star star ${isHighlighted ? 'highlight' : ''}`} />
+);
+
+const determineHighlightedStars = (rate) => {
+  const stars = [];
+  for (let i = 1; i <= 5; i++) {
+    stars.push(i <= rate);
+  }
+  return stars;
+};
+
+// Component tạo sản phẩm
 export const Product = ({ products }) => {
-  console.log("products");
-  console.log(products);
+  //const [highlightedStars, setHighlightedStars] = useState([]);
+
+  // Hàm để xác định sao được làm sáng
+
+
+  // Effect để cập nhật sao được làm sáng khi products thay đổi
+
+  
+  //     const updateHighlightedStars = products.map((product) =>
+  //       determineHighlightedStars(product.Rates)
+  //     );
+  
+  //     setHighlightedStars(updateHighlightedStars);
+  //   }
+  // }, [products]);
+
+  
   return (
     <div className="container">
       <div className="row">
@@ -39,14 +70,18 @@ export const Product = ({ products }) => {
                       {e.Description}
                     </a>
                   </div>
-                  <h3 className="mb-0 font-weight-semibold">{e.Price}</h3>
+                  <h3 className="mb-0 font-weight-semibold product-price">{e.Price}</h3>
                   <div>
-                    <i className="fa fa-star star" />
-                    <i className="fa fa-star star" />
-                    <i className="fa fa-star star" />
-                    <i className="fa fa-star star" />
+                  <div className="star-rating">
+                  {determineHighlightedStars(e.Rates).map((isHighlighted, starIndex) => (
+                      <Star
+                        key={starIndex}
+                        isHighlighted={isHighlighted}
+                      />
+                    ))} 
+                    <div className="rating-number">{e.Rates}</div>
                   </div>
-                  <div className="text-muted mb-3">{e.Rates}</div>
+                  </div>
                   <div className="right">
                     <Link
                       to="/product"
