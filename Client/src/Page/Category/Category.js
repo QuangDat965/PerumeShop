@@ -3,7 +3,7 @@ import './Category.scss'
 import { Product } from './Product'
 import { get } from '../../Api/Api'
 
-export const Category = () => {
+export const Category = (props) => {
   const [productss,setProduct] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -26,72 +26,7 @@ export const Category = () => {
   console.log(data);
 
 
-  const products = [{
-    imgSrc: 'https://golmart.com.vn/wp-content/uploads/2020/02/nuoc-hoa-13-2048x1492.jpg',
-    title: 'Nước hoa xịn',
-    desc: 'hàng tàu',
-    vote: 0,
-    price: 1000
 
-  },
-  {
-    imgSrc: 'https://golmart.com.vn/wp-content/uploads/2020/02/nuoc-hoa-13-2048x1492.jpg',
-    title: 'Nước hoa xịn',
-    desc: 'hàng tàu',
-    vote: 0,
-    price: 1000
-
-  },
-  {
-    imgSrc: 'https://golmart.com.vn/wp-content/uploads/2020/02/nuoc-hoa-13-2048x1492.jpg',
-    title: 'Nước hoa xịn',
-    desc: 'hàng tàu',
-    vote: 0,
-    price: 1000
-
-  }
-    , {
-    imgSrc: 'https://golmart.com.vn/wp-content/uploads/2020/02/nuoc-hoa-13-2048x1492.jpg',
-    title: 'Nước hoa xịn',
-    desc: 'hàng tàu',
-    vote: 0,
-    price: 1000
-
-  },
-  {
-    imgSrc: 'https://golmart.com.vn/wp-content/uploads/2020/02/nuoc-hoa-13-2048x1492.jpg',
-    title: 'Nước hoa xịn',
-    desc: 'hàng tàu',
-    vote: 0,
-    price: 1000
-
-  },
-  {
-    imgSrc: 'https://golmart.com.vn/wp-content/uploads/2020/02/nuoc-hoa-13-2048x1492.jpg',
-    title: 'Nước hoa xịn',
-    desc: 'hàng tàu',
-    vote: 0,
-    price: 1000
-
-  }
-  ,
-  {
-    imgSrc: 'https://golmart.com.vn/wp-content/uploads/2020/02/nuoc-hoa-13-2048x1492.jpg',
-    title: 'Nước hoa xịn',
-    desc: 'hàng tàu',
-    vote: 0,
-    price: 1000
-
-  }
-  ,
-  {
-    imgSrc: 'https://golmart.com.vn/wp-content/uploads/2020/02/nuoc-hoa-13-2048x1492.jpg',
-    title: 'Nước hoa xịn',
-    desc: 'hàng tàu',
-    vote: 0,
-    price: 1000
-
-  }];
   return (
     <div className='categoryc'>
 
@@ -183,7 +118,7 @@ export const Category = () => {
         </div>
 
 
-        <Product products={productss}></Product>
+        <Product setCartNum = {props.setCartNum} products={productss}></Product>
       </section>
 
 

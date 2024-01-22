@@ -17,28 +17,17 @@ const determineHighlightedStars = (rate) => {
 };
 
 // Component tạo sản phẩm
-export const Product = ({ products }) => {
-  //const [highlightedStars, setHighlightedStars] = useState([]);
-
-  // Hàm để xác định sao được làm sáng
-
-
-  // Effect để cập nhật sao được làm sáng khi products thay đổi
-
+export const Product = (props) => {
   
-  //     const updateHighlightedStars = products.map((product) =>
-  //       determineHighlightedStars(product.Rates)
-  //     );
-  
-  //     setHighlightedStars(updateHighlightedStars);
-  //   }
-  // }, [products]);
 
+  const handleAddToCart = (e) => {
+    props.setCartNum(e);
+  }
   
   return (
     <div className="container">
       <div className="row">
-        {products.map((e, i) => {
+        {props.products.map((e, i) => {
           //
           return (
             <div key={i} className="col-sm-2 mb-3">
@@ -60,7 +49,7 @@ export const Product = ({ products }) => {
                     <h6 className="font-weight-semibold mb-2">
                       <a
                         href="#"
-                        className="text-default mb-2 r-linec"
+                        className="text-default mb-2"
                         data-abc="true"
                       >
                         {e.Name}
@@ -89,7 +78,7 @@ export const Product = ({ products }) => {
                     >
                       <i className="fas fa-eye"></i>
                     </Link>
-                    <button className="btn btn-sm btn-outline-success">
+                    <button onClick={()=> handleAddToCart(e)} className="btn btn-sm btn-outline-success">
                       <i className="fas fa-cart-plus"></i>
                     </button>
                   </div>

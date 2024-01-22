@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import "./Header.scss";
 
 const Header = (props) => {
-  
   const handleLogout = () => {
     localStorage.removeItem("islogin");
     props.LoginState(false);
   };
+
 
   return (
     <div className="headerc">
@@ -28,14 +28,14 @@ const Header = (props) => {
             <div className="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
               <div className="d-flex">
                 {/* Cart */}
-                <a className="text-reset me-3" href="#">
+                <Link to='/cart' className="text-reset me-3" href="#">
                   <span>
                     <i className="fas fa-shopping-cart" />
                   </span>
                   <span className="badge rounded-pill badge-notification bg-danger">
-                    1
+                   {props.CartNum}
                   </span>
-                </a>
+                </Link>
                 {/* Notification */}
                 <div className="dropdown togglech ">
                   <a
