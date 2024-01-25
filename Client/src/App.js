@@ -11,6 +11,8 @@ import { Navbar } from "./Page/navbar/Navbar";
 import { Category } from "./Page/Category/Category";
 import { ProductDetails } from "./Page/product/ProductDetails";
 import Cart from "./Page/Cart/Cart";
+import Admin from "./Page/Admin/Admin"
+import ConfirmedProduct from "./Page/Admin/Confirmed-product/Confirmed-product"
 
 function App() {
   const [isLogin, setIslogin] = useState(false);
@@ -88,6 +90,8 @@ const TestC = () => {
             render={() => <Login LoginState={LoginState} />}
           />
           <Route path="/register" component={Register} />
+          <Route path="/admin" component={Admin}/>
+          <Route path="confirmed-product" exact component={ConfirmedProduct}/>
           <Route path="/cart" component={Cart} />
           <Route path="/product" component={ProductDetails} />
         </Switch>
